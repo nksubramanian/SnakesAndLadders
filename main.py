@@ -9,11 +9,11 @@ import SnakeAndLadder
 if __name__ == '__main__':
 
     first_game = SnakeAndLadder.SnakeAndLadder()
-    validdice=set(range(1,7))
+    valid_dicerolls=set(range(1,7))
 
     while True:
         val = input("Enter the die value: ")
-        if int(val) not in validdice:
+        if int(val) not in valid_dicerolls:
             raise Exception("Invalid Dice value")
         if first_game.play_onemove(int(val)) != 0:
             break
