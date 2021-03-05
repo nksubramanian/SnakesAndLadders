@@ -15,7 +15,7 @@ if __name__ == '__main__':
         val = input("Enter the die value: ")
         if int(val) not in validdice:
             raise Exception("Invalid Dice value")
-        if first_game.playonemove(int(val)) != 0:
+        if first_game.play_onemove(int(val)) != 0:
             break
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

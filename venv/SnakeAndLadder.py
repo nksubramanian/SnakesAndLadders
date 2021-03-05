@@ -7,7 +7,7 @@ class SnakeAndLadder:
     ladder = [5, 12, 16, 19, 35, 40]
     ladder_effect = [10, 26, 29, 33, 36, 45]
 
-    def move(self, dice_roll):
+    def update_states(self, dice_roll):
         if (self.position + dice_roll) not in self.all_position:
             self.money_available = self.money_available - 10
 
@@ -21,10 +21,10 @@ class SnakeAndLadder:
             else:
                 self.position = self.position + dice_roll
 
-    def states(self):
+    def print_state(self):
         print("You are in position " + str(self.position) + " and availabe money is " + str(self.money_available))
 
-    def game_declaration(self):
+    def conclude_game(self):
         if self.money_available <= 0:
             print("You lost")
             return -1
@@ -34,9 +34,9 @@ class SnakeAndLadder:
         else:
             return 0
 
-    def playonemove(self, dice_roll):
+    def play_onemove(self, dice_roll):
         # print("I am right below")
-        self.move(dice_roll)
+        self.update_states(dice_roll)
         # print("I am below move")
-        self.states()
-        return self.game_declaration()
+        self.print_state()
+        return self.conclude_game()
